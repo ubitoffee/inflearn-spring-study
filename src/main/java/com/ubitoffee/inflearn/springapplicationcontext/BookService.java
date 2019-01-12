@@ -1,15 +1,16 @@
 package com.ubitoffee.inflearn.springapplicationcontext;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 @Service
 public class BookService {
 
     @Autowired
-    BookRepository bookRepository;
+    BookRepository myBookRepository;
 
-    public void setBookRepository(BookRepository bookRepository) {
-        this.bookRepository = bookRepository;
+    public void printBookRepository() {
+        System.out.println(myBookRepository.getClass());
     }
 }
