@@ -1,17 +1,17 @@
 package com.ubitoffee.inflearn.springapplicationcontext;
 
-import org.springframework.context.ApplicationEvent;
-
-public class MyEvent extends ApplicationEvent {
+// 4.2에서 ApplicationEvent 상속 삭제
+public class MyEvent {
     private int data;
-
-    public MyEvent(Object source) {
-        super(source);
-    }
+    private Object source;
 
     public MyEvent(Object source, int data) {
-        super(source);
+        this.source = source;
         this.data = data;
+    }
+
+    public Object getSource() {
+        return source;
     }
 
     public int getData() {
