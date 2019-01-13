@@ -1,9 +1,11 @@
 package com.ubitoffee.inflearn.springapplicationcontext;
 
 import org.springframework.core.convert.converter.Converter;
+import org.springframework.stereotype.Component;
 
 public class EventConverter {
 
+    @Component
     public static class StringToEventConverter implements Converter<String, Event> {
         @Override
         public Event convert(String source) {
@@ -11,7 +13,8 @@ public class EventConverter {
         }
     }
 
-    public static class EventToStringCoverter implements Converter<Event, String> {
+//    @Component
+    public static class EventToStringConverter implements Converter<Event, String> {
 
         @Override
         public String convert(Event event) {
