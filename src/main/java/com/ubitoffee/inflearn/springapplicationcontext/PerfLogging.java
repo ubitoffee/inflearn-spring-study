@@ -1,4 +1,9 @@
 package com.ubitoffee.inflearn.springapplicationcontext;
 
-public class PerfLogging {
+import java.lang.annotation.*;
+
+@Documented
+@Target(ElementType.METHOD)
+@Retention(RetentionPolicy.CLASS)
+public @interface PerfLogging {
 }

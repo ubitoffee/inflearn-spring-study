@@ -11,7 +11,7 @@ public class PerfAspect {
 
     // 이 Advice를 어떻게 적용할 것인가 (Around) - 감싸는 형태
     // Pointcut
-    @Around("execution(* com.ubitoffee..*.EventService.*(..))")
+    @Around("@annotation(PerfLogging)")
     public Object logPerf(ProceedingJoinPoint pjp) throws Throwable {
         long begin = System.currentTimeMillis();
         Object retVal = pjp.proceed();
